@@ -284,7 +284,7 @@ jobs:
       - name: "📢 Announce deployment and favorite frame"
         if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && env.deploy_this == 'true'
         env:
-          deploy_this: true
+          deploy_this: false
           FARCASTER_BEARER_TOKEN: ${{ secrets.FARCASTER_BEARER_TOKEN }}
         run: |
                   PRODUCTION_URL="${{ steps.deploy-production.outputs.production_url }}"
