@@ -24,8 +24,8 @@ const getFarcasterConfig = () => {
     // Fallback config if file read fails
     return {
       miniapp: {
-        name: 'Next.js Mini App',
-        buttonTitle: 'Launch App',
+        name: 'Create Invoice Easy',
+        buttonTitle: 'Launch Create Invoice Easy',
         homeUrl: process.env.NEXT_PUBLIC_APP_DOMAIN || 'https://example.com',
         imageUrl: process.env.NEXT_PUBLIC_APP_DOMAIN 
           ? `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}/og-image.png`
@@ -43,14 +43,14 @@ const farcasterConfig = getFarcasterConfig();
 
 export const metadata: Metadata = {
   title: {
-    default: 'Farcaster Mini App',
-    template: '%s | Farcaster Mini App',
+    default: 'Create Invoice Easy',
+    template: '%s | Create Invoice Easy',
   },
-  description: 'A Farcaster mini app built with Next.js and deployed on Cloudflare Pages',
-  keywords: ['Farcaster', 'Mini App', 'Web3', 'Social', 'Decentralized'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
-  publisher: 'Your Company',
+  description: 'Create Invoice Easy helps you craft professional invoices for your clients in seconds.',
+  keywords: ['Create Invoice Easy', 'invoice generator', 'billing', 'finance', 'small business'],
+  authors: [{ name: 'Create Invoice Easy Team' }],
+  creator: 'Create Invoice Easy',
+  publisher: 'Create Invoice Easy',
   formatDetection: {
     email: false,
     address: false,
@@ -58,17 +58,24 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   openGraph: {
-    title: 'Farcaster Mini App',
-    description: 'A Farcaster mini app built with Next.js',
+    title: 'Create Invoice Easy',
+    description: 'Generate polished invoices instantly with Create Invoice Easy.',
     url: '/',
-    siteName: 'Farcaster Mini App',
+    siteName: 'Create Invoice Easy',
     locale: 'en_US',
     type: 'website',
+    images: farcasterConfig.miniapp.imageUrl ? [
+      {
+        url: farcasterConfig.miniapp.imageUrl,
+        alt: 'Preview of Create Invoice Easy',
+      },
+    ] : undefined,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Farcaster Mini App',
-    description: 'A Farcaster mini app built with Next.js',
+    title: 'Create Invoice Easy',
+    description: 'Generate polished invoices instantly with Create Invoice Easy.',
+    images: farcasterConfig.miniapp.imageUrl ? [farcasterConfig.miniapp.imageUrl] : undefined,
   },
   robots: {
     index: true,
